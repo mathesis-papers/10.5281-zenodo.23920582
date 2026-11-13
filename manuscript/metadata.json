@@ -1,0 +1,15 @@
+{
+  "id": "malkoun-2026-mo512579-jordan-elementary",
+  "revision": 1,
+  "problem_ids": ["malkoun-2026-mo512579-jordan-elementary"],
+  "topic": "MathOverflow 512579, revision 1, first question: elementary symmetric eigenvalue inequalities for a Hermitian Jordan product",
+  "title": "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We answer the first question in Malkoun's MathOverflow 512579, revision 1: for positive semidefinite Hermitian X,Y, every elementary symmetric function of the eigenvalues of XY+YX is at most its counterpart for X^2+Y^2. The written proof establishes the stronger absolute-value inequality for arbitrary Hermitian X,Y and for H=A*B+B*A, R=A*A+B*B with arbitrary rectangular complex A,B. Cauchy-Binet and Cauchy-Schwarz bound each principal determinant, including singular cases. The pinned Lean declaration proves the original positive-semidefinite assertion; the extensions have written proofs and accompanying exact finite checks.",
+  "summary": "A Gram-determinant proof of the first question in MathOverflow 512579, with an absolute-value bound, a rectangular extension, a determinant-polynomial bound and an equality criterion.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/57b811cedb64c8065c6afac0da57d0fe2c8aa5ab/D5/S3/Quantum/Matrix/MalkounJordanElementary.lean"
+}

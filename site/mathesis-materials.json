@@ -1,0 +1,14 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "malkoun-2026-mo512579-jordan-elementary",
+  "version": 1,
+  "repository_url": "https://github.com/mathesis-papers/6aec38560b38207a66628490",
+  "site_url": "https://papers.trureturing.org/6aec38560b38207a66628490/",
+  "doi": "10.5281/zenodo.23920583",
+  "reading": {
+    "en": "https://papers.trureturing.org/6aec38560b38207a66628490/en/",
+    "zh": "https://papers.trureturing.org/6aec38560b38207a66628490/zh/"
+  },
+  "slides": [],
+  "visualizations": []
+}

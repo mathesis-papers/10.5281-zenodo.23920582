@@ -1,0 +1,270 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,allcolors=blue,breaklinks=true]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\title{MathOverflow 512579, revision 1:\\
+The elementary symmetric inequality\\for a Hermitian Jordan product}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}
+\and Wenlin Zhang\thanks{National University of Singapore;
+ChronoAI Pte Ltd, Singapore.}}
+\date{November 2, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We answer the first question in Malkoun's MathOverflow 512579, revision 1:
+for positive semidefinite Hermitian matrices $X,Y$, every elementary symmetric
+function of the eigenvalues of $XY+YX$ is at most its counterpart for $X^2+Y^2$.
+In fact, for arbitrary Hermitian $X,Y$, the absolute value of the former is
+bounded by the latter. A principal-minor argument using the
+Cauchy--Binet formula and Cauchy--Schwarz proves a rectangular-matrix extension
+and a determinant-polynomial bound, including singular matrices.
+\end{abstract}
+
+\section{The question and a stronger statement}
+Malkoun's first question in MathOverflow 512579, revision 1
+(June 24, 2026)~\cite{malkoun}, asks whether
+\begin{equation}\label{eq:posed}
+ \ee_k\bigl(\lambda(XY+YX)\bigr)
+ \leq \ee_k\bigl(\lambda(X^2+Y^2)\bigr),\qquad 1\leq k\leq n,
+\end{equation}
+for complex $n\times n$ Hermitian positive semidefinite $X,Y$.
+The answer is yes, and positivity of $X,Y$ can be removed.
+Here $\lambda(M)$ lists eigenvalues with algebraic multiplicity and
+$\ee_k(t_1,\ldots,t_n)=\sum_{|S|=k}\prod_{i\in S}t_i$, with $\ee_0=1$.
+The Jordan product is used without the factor $1/2$.
+
+The proof applies the classical determinant form of Cauchy--Schwarz to two
+stacked column matrices. Compound-matrix methods for elementary symmetric
+spectral functions also appear in Merikoski and Virtanen~\cite[\S\S2--3,6]{mv};
+here the stack makes the two Gram matrices identical and directly bounds each
+principal minor. No eigenvalue-by-eigenvalue comparison is needed.
+
+\begin{theorem}\label{thm:main}
+Let $A,B\in\CC^{p\times n}$, where $p,n\geq1$, and put
+\[
+ H=A^*B+B^*A,\qquad R=A^*A+B^*B.
+\]
+For every $S\subseteq\{1,\ldots,n\}$,
+\begin{equation}\label{eq:principal}
+ |\det H[S,S]|\leq\det R[S,S].
+\end{equation}
+Consequently, for $0\leq k\leq n$,
+\begin{equation}\label{eq:strong}
+ \bigl|\ee_k(\lambda(H))\bigr|
+ \leq\sum_{|S|=k}|\det H[S,S]|
+ \leq\ee_k(\lambda(R)).
+\end{equation}
+\end{theorem}
+
+\section{Proof by Gram determinants}
+\begin{lemma}\label{lem:gram}
+For $U,V\in\CC^{m\times k}$,
+\[
+ |\det(U^*V)|^2\leq\det(U^*U)\det(V^*V).
+\]
+\end{lemma}
+\begin{proof}
+For a $k$-element subset $T\subseteq\{1,\ldots,m\}$, list rows in increasing
+order and set $u_T=\det U[T,:]$, $v_T=\det V[T,:]$.
+The Cauchy--Binet identity gives
+\[
+ \det(U^*V)=\sum_{|T|=k}\overline{u_T}v_T,\quad
+ \det(U^*U)=\sum_{|T|=k}|u_T|^2,\quad
+ \det(V^*V)=\sum_{|T|=k}|v_T|^2.
+\]
+Indeed, expanding a determinant of a product by multilinearity gives a sum
+over selected intermediate rows; terms with repeated rows vanish, and grouping
+the distinct rows gives exactly these minors. Applying the ordinary
+Cauchy--Schwarz inequality to the two lists $(u_T)_T,(v_T)_T$ proves the result.
+If $k>m$, both matrices have column rank less than $k$ and all three determinants
+vanish. If $k=0$, the determinants and the single empty minor are $1$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $S$ with $|S|=k$, and let $A_S,B_S$ denote the $p\times k$ matrices of
+selected columns, in increasing order. Form the $2p\times k$ matrices
+\[
+ U=\begin{pmatrix}A_S\\B_S\end{pmatrix},\qquad
+ V=\begin{pmatrix}B_S\\A_S\end{pmatrix}.
+\]
+Direct multiplication gives
+\[
+ U^*U=V^*V=R[S,S],\qquad U^*V=H[S,S].
+\]
+Lemma~\ref{lem:gram} therefore yields
+$|\det H[S,S]|^2\leq(\det R[S,S])^2$.
+Since $R[S,S]$ is positive semidefinite, its determinant is nonnegative;
+taking square roots proves~\eqref{eq:principal}.
+
+For every square matrix $M$, expansion in the columns of $\Id+tM$ gives
+\begin{equation}\label{eq:coeff}
+ \det(\Id+tM)=\sum_{S\subseteq\{1,\ldots,n\}}t^{|S|}\det M[S,S]
+ =\sum_{k=0}^n t^k\ee_k(\lambda(M)).
+\end{equation}
+In the first expansion, choosing columns of $tM$ on $S$ and identity columns
+elsewhere leaves the principal determinant $\det M[S,S]$.
+The second identity follows by factoring the characteristic polynomial,
+with multiplicities. Both $H$ and $R$ are Hermitian, so their eigenvalues
+and principal determinants are real. Taking the triangle inequality in the
+coefficient of $t^k$ and then summing~\eqref{eq:principal} proves~\eqref{eq:strong}.
+The argument includes zero matrices, repeated eigenvalues, and every singular case.
+\end{proof}
+
+\begin{corollary}\label{cor:hermitian}
+For arbitrary complex Hermitian $X,Y\in\CC^{n\times n}$ and $0\leq k\leq n$,
+\[
+ \bigl|\ee_k(\lambda(XY+YX))\bigr|\leq
+ \ee_k(\lambda(X^2+Y^2)).
+\]
+In particular, Malkoun's inequality~\eqref{eq:posed} holds.
+\end{corollary}
+\begin{proof}
+Take $p=n$, $A=X$ and $B=Y$ in Theorem~\ref{thm:main}; Hermiticity gives
+$A^*B+B^*A=XY+YX$ and $A^*A+B^*B=X^2+Y^2$.
+\end{proof}
+
+\begin{corollary}\label{cor:det}
+With $H,R$ as in Theorem~\ref{thm:main}, for every $z\in\CC$,
+\[
+ |\det(\Id+zH)|\leq\det(\Id+|z|R).
+\]
+Moreover, $|\det H|\leq\det R$ and
+$\tr R-\tr H=\|A-B\|_F^2$.
+Equality in all the one-sided inequalities
+$\ee_k(\lambda(H))\leq\ee_k(\lambda(R))$, $1\leq k\leq n$,
+holds if and only if $A=B$.
+\end{corollary}
+\begin{proof}
+Use~\eqref{eq:coeff}, the triangle inequality, and~\eqref{eq:strong}
+to bound the determinant polynomial by
+$\sum_k |z|^k\ee_k(\lambda(R))$.
+The determinant inequality is~\eqref{eq:strong} with $k=n$.
+Finally,
+$R-H=(A-B)^*(A-B)$, whose trace is $\|A-B\|_F^2$.
+If all the one-sided equalities hold, the case $k=1$ forces $A=B$;
+conversely $A=B$ gives $H=R$.
+\end{proof}
+
+Positive semidefinite $X,Y$ need not have a positive semidefinite Jordan product.
+For example,
+\[
+ X=\begin{pmatrix}1&0\\0&0\end{pmatrix},\quad
+ Y=\begin{pmatrix}1&1\\1&1\end{pmatrix},\quad
+ XY+YX=\begin{pmatrix}2&1\\1&0\end{pmatrix}.
+\]
+Its determinant is $-1$, whereas $\det(X^2+Y^2)=2$.
+Thus the absolute-value bound treats a case not explained by monotonicity
+inside the positive semidefinite cone.
+
+\begin{corollary}[Commuting Schur siblings]\label{cor:schur}
+Let $A,B,C$ be pairwise commuting positive semidefinite Hermitian matrices,
+and write $S=A+B+C$, $Q=A^2+B^2+C^2$, $F=6(A^3+B^3+C^3)+S^3$.
+Then $\det F\geq5^n\det S\det Q$.
+For every $k$, the elementary symmetric functions of the singular values
+of $F$ dominate those of $5SQ$; also
+$\ee_k(\lambda(2F))\geq\ee_k(\lambda(5SQ+5QS))$.
+\end{corollary}
+\begin{proof}
+Simultaneous unitary diagonalization reduces each assertion to nonnegative
+diagonal entries $a,b,c$. Put $s=a+b+c$, $q=a^2+b^2+c^2$ and
+$f=6(a^3+b^3+c^3)+s^3$.
+By symmetry assume $a\geq b\geq c\geq0$. Direct expansion gives
+\[
+ f-5sq=2\bigl((a-b)^2(a+b-c)+c(a-c)(b-c)\bigr)\geq0.
+\]
+Thus each diagonal entry satisfies $f\geq5sq\geq0$.
+Products of any fixed number of these entries preserve the inequality;
+summing those products gives every claimed elementary symmetric inequality.
+The full product gives the determinant assertion. Finally $SQ=QS$, so the
+last comparison is exactly twice the same scalar comparison.
+\end{proof}
+
+\section{Source coverage and verification}
+The exact first question of MathOverflow 512579 is covered for every dimension
+and every stated index. Its later general promotion question leaves the
+noncommutative promotion unspecified; the proof here supplies the concrete
+rectangular family in Theorem~\ref{thm:main}.
+The linked discussion~\cite{malkoun-answer,krokop,cubesteak} also contains
+three-matrix Schur-type problems, which involve different expressions.
+
+\begin{center}\small
+\begin{tabular}{@{}p{0.43\linewidth}p{0.51\linewidth}@{}}
+\toprule
+Source item & Coverage \\
+\midrule
+MO 512579, revision 1, first question & Proved by Corollary~\ref{cor:hermitian}. \\
+MO 512579, general promotion question & Theorem~\ref{thm:main} gives a family;
+a universal promotion rule is not covered. \\
+MO answer 492315, final two-matrix question & Same inequality;
+Corollary~\ref{cor:hermitian} applies. \\
+MO answer 492315, three-matrix determinant, singular-value and
+symmetrized eigenvalue conjectures & Commuting cases proved in
+Corollary~\ref{cor:schur}; noncommuting cases not covered. \\
+MO answer 492315, rank-one reduction & Not covered. \\
+Math.SE 4726142, determinant conjecture and $C=\Id$ variant~\cite{river} &
+Commuting cases proved in Corollary~\ref{cor:schur}; noncommuting cases not covered. \\
+MO 180293, normalized three-matrix determinant & Prior posted proof:
+cubesteak, answer 514685 (August 26, 2026)~\cite{cubesteak}. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\begin{minipage}{\linewidth}
+The declaration
+\begin{center}\small
+\texttt{D5.S3.Quantum.Matrix.MalkounJordanElementary.result}
+\end{center}
+in the
+\href{https://github.com/the-omega-institute/trureturing/blob/57b811cedb64c8065c6afac0da57d0fe2c8aa5ab/D5/S3/Quantum/Matrix/MalkounJordanElementary.lean}{pinned Lean file}
+proves exactly~\eqref{eq:posed}, assuming positive semidefinite $X,Y$,
+$n>0$ and $1\leq k\leq n$.
+Its Cauchy--Binet dependency is \texttt{cauchyBinet} in the
+\href{https://github.com/the-omega-institute/trureturing/blob/57b811cedb64c8065c6afac0da57d0fe2c8aa5ab/D5/S3/Quantum/Schatten/CompoundMatrices.lean}{pinned compound-matrix file}.
+The absolute-value, unrestricted Hermitian and rectangular extensions and
+Corollaries~\ref{cor:det}--\ref{cor:schur} have the written proofs given above.
+The accompanying \texttt{verify.py} gives exact Gaussian-integer finite checks
+of the determinant identities and bounds; their ranges and counts are recorded
+in \texttt{verification.json}.
+\end{minipage}
+
+\begin{thebibliography}{9}
+\bibitem{malkoun} Malkoun (Joseph Malkoun),
+\emph{Promoting polynomial equalities for nonnegative variables to elementary
+symmetric polynomial inequalities}, MathOverflow question 512579,
+revision 1, June 24, 2026, GUID
+\texttt{DFD20136-D37A-462C-8A59-FD828AEEFF9A}.
+\url{https://mathoverflow.net/questions/512579}.
+\bibitem{mv} J.~K.~Merikoski and A.~Virtanen,
+\emph{On elementary symmetric functions of the eigenvalues of the sum and
+product of normal matrices}, Czechoslovak Mathematical Journal
+\textbf{42} (1992), no.~2, 193--198.
+\href{https://doi.org/10.21136/cmj.1992.128332}{doi:10.21136/cmj.1992.128332}.
+\bibitem{malkoun-answer} Malkoun, answer 492315 to MathOverflow question 180293,
+May 8, 2025; version dated June 23, 2026, especially Edits 2--3 and the final question.
+\url{https://mathoverflow.net/a/492315}.
+\bibitem{krokop} Krokop, \emph{Determinant inequality involving Hermitian,
+positive definite matrices}, MathOverflow question 180293, September 7, 2014.
+\url{https://mathoverflow.net/questions/180293}.
+\bibitem{cubesteak} cubesteak, answer 514685 to MathOverflow question 180293,
+August 26, 2026, sum-of-squares proof for $A+B+C=\Id$.
+\url{https://mathoverflow.net/a/514685}.
+\bibitem{river} River Li, Mathematics Stack Exchange question 4726142,
+first displayed determinant conjecture and the $C=\Id$ variant,
+June 27, 2023.
+\url{https://math.stackexchange.com/questions/4726142}.
+\end{thebibliography}
+\medskip\noindent\small
+\textcopyright\ 2026 Haobo Ma and Wenlin Zhang.
+This note is licensed under
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International (CC BY 4.0)}.
+The cited MathOverflow contributions have their own CC BY-SA 4.0 attribution.
+\end{document}

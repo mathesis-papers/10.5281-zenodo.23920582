@@ -1,0 +1,42 @@
+{
+  "arithmetic": "Gaussian integers; exact integer determinant expansion",
+  "counts": {
+    "coefficient_bounds": 311,
+    "matrix_pairs": 89,
+    "polynomial_identities": 534,
+    "principal_subsets": 664,
+    "scalar_schur_identities": 216,
+    "trace_identities": 89
+  },
+  "example": {
+    "elementary_coefficients_H": [
+      1,
+      2,
+      -1
+    ],
+    "elementary_coefficients_R": [
+      1,
+      5,
+      2
+    ]
+  },
+  "scope": {
+    "boundary_pairs": "zero, equal and opposite pairs for each n=1,2,3,4",
+    "hermitian_pairs": "6 seeded pairs per n=1,2,3,4",
+    "polynomial_bounds": "parameters 0,1,-1,2,i",
+    "polynomial_parameters": [
+      "0",
+      "1",
+      "-1",
+      "2",
+      "i",
+      "1+i"
+    ],
+    "positive_semidefinite_pairs": "4 Gram-matrix pairs per n=1,2,3,4",
+    "rectangular_pairs": "3 seeded pairs per p=1,2,3 and n=1,2,3,4",
+    "scalar_schur": "all triples in {0,1,2,3,4,5}^3",
+    "universal_statements": "written proofs in note.tex; finite checks cover the stated matrices"
+  },
+  "seed": 512579,
+  "status": "pass"
+}

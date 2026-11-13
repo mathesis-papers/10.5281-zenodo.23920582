@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 74342,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97"
+    },
+    "source": {
+      "bytes": 11812,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We answer the first question in Malkoun's MathOverflow 512579, revision 1: for positive semidefinite Hermitian X,Y, every elementary symmetric function of the eigenvalues of XY+YX is at most its counterpart for X^2+Y^2. The written proof establishes the stronger absolute-value inequality for arbitrary Hermitian X,Y and for H=A*B+B*A, R=A*A+B*B with arbitrary rectangular complex A,B. Cauchy-Binet and Cauchy-Schwarz bound each principal determinant, including singular cases. The pinned Lean declaration proves the original positive-semidefinite assertion; the extensions have written proofs and accompanying exact finite checks.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23920582",
+    "current_version": 1,
+    "doi": "10.5281/zenodo.23920583",
+    "lean_source": {
+      "revision": "57b811cedb64c8065c6afac0da57d0fe2c8aa5ab",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/57b811cedb64c8065c6afac0da57d0fe2c8aa5ab/D5/S3/Quantum/Matrix/MalkounJordanElementary.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/malkoun-2026-mo512579-jordan-elementary/files/pdf?version=1"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T08:03:34.720988098Z",
+    "record": "malkoun-2026-mo512579-jordan-elementary",
+    "repository_name": "6aec38560b38207a66628490",
+    "source": {
+      "url": "/api/v1/collected-papers/malkoun-2026-mo512579-jordan-elementary/files/source?version=1"
+    },
+    "title": "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T08:03:34.720988098Z",
+        "revision": "1",
+        "version": 1
+      }
+    ],
+    "work": "malkoun-2026-mo512579-jordan-elementary"
+  }
+}
