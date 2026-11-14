@@ -13,7 +13,8 @@
     "manuscript/verification.json",
     "manuscript/verify.py",
     "paper.json",
-    "paper.pdf"
+    "paper.pdf",
+    "source.archive"
   ],
   "generator_version": "0.1.0",
   "sha256": {
@@ -29,8 +30,9 @@
     "manuscript/note.tex": "7472b023cadd574c0639ef257c0795e0123d17554f1c1fb869e94905acb7f80d",
     "manuscript/verification.json": "82604f23d196ede8df31665c830f276c5fbac4f1c85d6f4da5c39125523af6e9",
     "manuscript/verify.py": "8d2ec0207e765163ad5908ca08a97f2b5dec24cd2f708478c23682dd57a3203b",
-    "paper.json": "b047edfa26fce8f6eaa5a802a0580f1ac6aab29e8c685deb0871a7dfd4804dee",
-    "paper.pdf": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97"
+    "paper.json": "ffde98b3036adc51ee2b38707a0cfd12c00342cc0681b641cdfb301457ec5a76",
+    "paper.pdf": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97",
+    "source.archive": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7"
   },
-  "snapshot_identity": "6769145a449927d848468ac7bcb4b79dd3d32d998c12eceb6c4c00e8ab4879b9"
+  "snapshot_identity": "239e07108bbd26d74a3d2f6662287675bedd61641bb88c6035aba1a3ca3b7f07"
 }

@@ -1,7 +1,7 @@
 {
   "git_blobs": {
     ".github/workflows/pages.yml": "7879724db1358178aad7e9bed326a44be44f5a6a",
-    ".mathesis/generated.json": "dba2302c657c5463e1491e06940030444bdf95d3",
+    ".mathesis/generated.json": "8eb549f1d445cd9032018c5ce75f770b1a02d8bd",
     "CHANGELOG.md": "34d6482fdd09b8e2c52d8833f7be92063fc9b771",
     "CITATION.cff": "87ae69b3a512618a72f0e88e5ef72773c6d46964",
     "CONTRIBUTING.md": "ea69168fc2cb506b57b00de1ef588aaf011aa3da",
@@ -14,12 +14,13 @@
     "manuscript/note.tex": "cdc8b63fae15c05e2181749c71a82fe23e9f26fd",
     "manuscript/verification.json": "1372e6ec95e316001f401e7adcbccb28d376b99a",
     "manuscript/verify.py": "b78fb52302774b1f5cfd6f5bd2844c95993892ad",
-    "paper.json": "87221b4c7a481f20c9def3ddb4383f1f6d6182cf",
+    "paper.json": "cc5de07e51e43ca09377d2b3beb4bb801e3d3f1f",
     "paper.pdf": "ce7fbc9016a2e76ea4a2ba81d2297e52c661cfe1",
     "site/en/index.html": "26d1f08224e1604fb9f7856ed54f54f03d4a9ef4",
-    "site/index.html": "eb0c0fa8d6a3c4eac4fa548691c74a5feebd74be",
+    "site/index.html": "17de9a04621d18d9556c71fdc5c56baa6f3442a2",
     "site/mathesis-materials.json": "c3bfee9ef4f92783d7df89ea980bc94acf88d991",
     "site/zh/index.html": "43b492c419269d1bb09613679a0195dd5a73d3b8",
+    "source.archive": "82bfff6e58a88c152dccd48b47af8ad63ef2d69e",
     "versions/v1/.mathesis/generated.json": "617104e8cf27e00c490f3b3fd99c4f21d5ae91b5",
     "versions/v1/CHANGELOG.md": "34d6482fdd09b8e2c52d8833f7be92063fc9b771",
     "versions/v1/CITATION.cff": "87ae69b3a512618a72f0e88e5ef72773c6d46964",
@@ -34,12 +35,13 @@
     "versions/v1/manuscript/verification.json": "1372e6ec95e316001f401e7adcbccb28d376b99a",
     "versions/v1/manuscript/verify.py": "b78fb52302774b1f5cfd6f5bd2844c95993892ad",
     "versions/v1/paper.json": "1c2cd66e74bada9c7e9324147f3f5af0de0f93b2",
-    "versions/v1/paper.pdf": "ce7fbc9016a2e76ea4a2ba81d2297e52c661cfe1"
+    "versions/v1/paper.pdf": "ce7fbc9016a2e76ea4a2ba81d2297e52c661cfe1",
+    "versions/v1/source.archive": "82bfff6e58a88c152dccd48b47af8ad63ef2d69e"
   },
   "schema": "mathesis.paper-collection.v1",
   "sha256": {
     ".github/workflows/pages.yml": "f15d983dcb8f324ffdedb50b05f7380e11fda8723d49b5c8f10ef0f414612372",
-    ".mathesis/generated.json": "d7f0169bfdf0b06e1c0adba3277c89d5c1d7d5c084c6e9f561f335c71316e311",
+    ".mathesis/generated.json": "7dd98cef337d663789d74217130c59a4adf5c116c121d343dc0ed50f734222c6",
     "CHANGELOG.md": "a6cb33c3056dcaa51072669901d5b208a8a7f1934b05161501f27b43bcda2462",
     "CITATION.cff": "151ed17241fa1f81dcd0ffe8cb84665a1a5715f40e78b9f99eef61e278ff0e40",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
@@ -52,12 +54,13 @@
     "manuscript/note.tex": "7472b023cadd574c0639ef257c0795e0123d17554f1c1fb869e94905acb7f80d",
     "manuscript/verification.json": "82604f23d196ede8df31665c830f276c5fbac4f1c85d6f4da5c39125523af6e9",
     "manuscript/verify.py": "8d2ec0207e765163ad5908ca08a97f2b5dec24cd2f708478c23682dd57a3203b",
-    "paper.json": "b047edfa26fce8f6eaa5a802a0580f1ac6aab29e8c685deb0871a7dfd4804dee",
+    "paper.json": "ffde98b3036adc51ee2b38707a0cfd12c00342cc0681b641cdfb301457ec5a76",
     "paper.pdf": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97",
     "site/en/index.html": "b67d0f6f13ff49eaa6047b212b4b127d35dafd0520816b9616f81b6bcf063107",
-    "site/index.html": "20b00755a6cb72aad4a27423901697fc1cfe2375ee3cff5f4e6b179eb35ef5f1",
+    "site/index.html": "6381da44818c7efebbd0b89db7dbd9245e36c47287aabc0a3c03a803d6cec0cf",
     "site/mathesis-materials.json": "d8429c7ef357c6a473b49d1cd5d1e551f33cecd77b9c013cd140a07bcb8aa48a",
     "site/zh/index.html": "c2188ccacea55457996621c3e0314f478ef328474255c891484132bda24a7ed4",
+    "source.archive": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7",
     "versions/v1/.mathesis/generated.json": "ad4f952b817bcbe4b12a062fec377e22006f2aa86eb0254cf0c02ac2f560af77",
     "versions/v1/CHANGELOG.md": "a6cb33c3056dcaa51072669901d5b208a8a7f1934b05161501f27b43bcda2462",
     "versions/v1/CITATION.cff": "151ed17241fa1f81dcd0ffe8cb84665a1a5715f40e78b9f99eef61e278ff0e40",
@@ -72,7 +75,8 @@
     "versions/v1/manuscript/verification.json": "82604f23d196ede8df31665c830f276c5fbac4f1c85d6f4da5c39125523af6e9",
     "versions/v1/manuscript/verify.py": "8d2ec0207e765163ad5908ca08a97f2b5dec24cd2f708478c23682dd57a3203b",
     "versions/v1/paper.json": "1f9cb1eba3cd8ac66999f919d76e4623761f081e531434070fba8189407551c1",
-    "versions/v1/paper.pdf": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97"
+    "versions/v1/paper.pdf": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97",
+    "versions/v1/source.archive": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7"
   },
   "version": 1,
   "work": "malkoun-2026-mo512579-jordan-elementary"
