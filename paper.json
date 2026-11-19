@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 74342,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97",
       "sha256": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97"
     },
     "source": {
       "bytes": 11812,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7",
       "sha256": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 74342,
+      "sha256": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97",
       "url": "/api/v1/collected-papers/malkoun-2026-mo512579-jordan-elementary/files/pdf?version=1"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "malkoun-2026-mo512579-jordan-elementary",
     "repository_name": "10.5281-zenodo.23920582",
     "source": {
+      "bytes": 11812,
+      "sha256": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7",
       "url": "/api/v1/collected-papers/malkoun-2026-mo512579-jordan-elementary/files/source?version=1"
     },
     "title": "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product",
