@@ -1,5 +1,3 @@
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
-
 # Precise statements and proofs
 
 The source uses one counter for its five results: Theorem 1, Lemma 2, Corollaries 3–5. We prove the tool lemma first. All written arguments follow [Haobo Ma and Wenlin Zhang, version 1](https://doi.org/10.5281/zenodo.23920583).
@@ -203,6 +201,10 @@ Since $a+b-c\geq0$ and the other factors are nonnegative, $f\geq5sq\geq0$. This 
 
 The question and earlier work are credited in the [story’s sources](README.md#sources-and-a-concrete-way-to-contribute). The related [MO answer 492315](https://mathoverflow.net/a/492315), [MO 180293](https://mathoverflow.net/questions/180293), and River Li’s [Math.SE 4726142](https://math.stackexchange.com/questions/4726142) involve different three-matrix expressions. Only the commuting cases above are proved here, not the noncommuting versions or the proposed rank-one reduction. The formal source is fixed by the [book pin](trureturing:); each written extension’s contribution route is its adjacent shared request.
 
+<section hidden="hidden">
+
 ```{=typst}
 #pagebreak()
 ```
+
+</section>
