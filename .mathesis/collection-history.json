@@ -1,0 +1,23 @@
+{
+  "schema": "mathesis.collection-history.v1",
+  "sha256": {
+    "versions/v1/.mathesis/generated.json": "ad4f952b817bcbe4b12a062fec377e22006f2aa86eb0254cf0c02ac2f560af77",
+    "versions/v1/CHANGELOG.md": "a6cb33c3056dcaa51072669901d5b208a8a7f1934b05161501f27b43bcda2462",
+    "versions/v1/CITATION.cff": "151ed17241fa1f81dcd0ffe8cb84665a1a5715f40e78b9f99eef61e278ff0e40",
+    "versions/v1/CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "versions/v1/LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "versions/v1/README.md": "00d48f3d3282358faa0eb9dce0bdcb6f96d46b4c10d33e0408176be9f9fb4628",
+    "versions/v1/formalization/nodes.json": "ca966a3a553f5ada0822ed20680d34f629ee16833070800760d86db9848304b1",
+    "versions/v1/manuscript/README.md": "e68076f0ce3d90354f51b8dc849b683aa8e16f9c8864a773a22deb7f050ccc4c",
+    "versions/v1/manuscript/SHA256SUMS": "d302cffe396a47ac2046efac23d9e74617226c202ec065e6e3b1b1ec9616420c",
+    "versions/v1/manuscript/metadata.json": "18c9c1372033f4d395f86595ba37603fdea7744daa79ae21322811c22891c45e",
+    "versions/v1/manuscript/note.tex": "7472b023cadd574c0639ef257c0795e0123d17554f1c1fb869e94905acb7f80d",
+    "versions/v1/manuscript/verification.json": "82604f23d196ede8df31665c830f276c5fbac4f1c85d6f4da5c39125523af6e9",
+    "versions/v1/manuscript/verify.py": "8d2ec0207e765163ad5908ca08a97f2b5dec24cd2f708478c23682dd57a3203b",
+    "versions/v1/paper.json": "1f9cb1eba3cd8ac66999f919d76e4623761f081e531434070fba8189407551c1",
+    "versions/v1/paper.pdf": "19e07c579f04c0eced139bfe405939713096e4edd0d556e3740427da1dac8e97",
+    "versions/v1/source.archive": "23c1ed9555e3d32c5cc6f8b423ff147ae75d2151015e0d09ba54ab41293664a7"
+  },
+  "source_commit": "48abc80fb03629fa250ad6a352953eeae9c21dab",
+  "work": "malkoun-2026-mo512579-jordan-elementary"
+}

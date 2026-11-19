@@ -1,0 +1,239 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{From squares to matrix inequalities}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}Chrono AI, Singapore \and \inst{2}National University of Singapore, Singapore}
+\date{2026-11-15}
+\begin{document}
+% Manuscript: Title; version 1, DOI 10.5281/zenodo.23920583
+\begin{frame}
+\titlepage
+\note{Based on version 1 of the paper, preserving recorded authors and affiliations. Begin with size two, then present the rectangular theorem, stacking mechanism and precise evidence scope.}
+\end{frame}
+\section{Question}
+% Manuscript: Section 1, posed inequality
+\begin{frame}{How far does a scalar inequality go?}
+\[
+2xy\leq x^2+y^2,\qquad (x-y)^2\geq0.
+\]
+\begin{itemize}
+\item Replace numbers by Hermitian matrices; use $XY+YX$.
+\item Choose $k$ eigenvalues, multiply, then sum all choices: is there still a bound?
+\item Yes, even for the absolute value of that sum.
+\end{itemize}
+\note{Start with the familiar square difference. Matrix multiplication need not commute, so use $XY+YX$, not $2XY$. There is no factor $1/2$. Credit Malkoun's first question in MO 512579, revision 1.}
+\end{frame}
+% Manuscript: Section 2, example after Corollary 4
+\begin{frame}{Positive inputs, negative determinant}
+\[
+X=\begin{pmatrix}1&0\\0&0\end{pmatrix},\quad
+Y=\begin{pmatrix}1&1\\1&1\end{pmatrix}.
+\]
+\begin{align*}
+H=XY+YX&=\begin{pmatrix}2&1\\1&0\end{pmatrix},\\
+R=X^2+Y^2&=\begin{pmatrix}3&2\\2&2\end{pmatrix}.
+\end{align*}
+\[
+\det H=-1,\qquad \det R=2.
+\]
+\note{Explain positive semidefiniteness using $|v_1|^2$ and $|v_1+v_2|^2$. A star denotes conjugate transpose. Since $H$ is real symmetric, its negative determinant means opposite-sign eigenvalues. The modulus bound $1\leq2$ carries more information than $-1\leq2$.}
+\end{frame}
+% Manuscript: Section 1, notation
+\begin{frame}{From trace to determinant}
+$\lambda(M)$ lists all eigenvalues, with repetitions.
+\[
+e_k(t_1,\ldots,t_n)=\sum_{|S|=k}\prod_{i\in S}t_i.
+\]
+\begin{align*}
+e_0&=1, &e_1(\lambda(M))&=\operatorname{tr}M,\\
+e_2(a,b,c)&=ab+ac+bc, &e_n(\lambda(M))&=\det M.
+\end{align*}
+\begin{block}{Our size-two example}
+$|e_1(\lambda(H))|=2\leq5$,\quad $|e_2(\lambda(H))|=1\leq2$.
+\end{block}
+\note{Use pairwise products of three numbers before naming elementary symmetric functions. The first is the sum of diagonal entries; the last is the determinant. The empty-product convention makes $e_0=1$.}
+\end{frame}
+\section{Result}
+% Manuscript: Theorem 1
+\begin{frame}{Written main result: rectangular inputs}
+$A,B\in\mathbb C^{p\times n}$, $p,n\geq1$; define
+\[
+H=A^*B+B^*A,\qquad R=A^*A+B^*B.
+\]
+\begin{bookresult}{rectangular-bound}
+For every $S\subseteq\{1,\ldots,n\}$,
+\[
+|\det H[S,S]|\leq\det R[S,S].
+\]
+For $0\leq k\leq n$,
+\begin{align*}
+|e_k(\lambda(H))|&\leq\sum_{|S|=k}|\det H[S,S]|\\
+&\leq e_k(\lambda(R)).
+\end{align*}
+\end{bookresult}
+\note{Explain that $M[S,S]$ selects the same row and column indices. This is source Theorem 1. The inputs need not be positive semidefinite or even square; the products are still square of size $n$. The empty set gives $1\leq1$.}
+\end{frame}
+\section{Mechanism}
+% Manuscript: Section 2, coefficient identity
+\begin{frame}{Replace spectra by small determinants}
+Expand $I+tM$ by columns, or factor the same polynomial:
+\begin{align*}
+\det(I+tM)&=\sum_{k=0}^n t^k\sum_{|S|=k}\det M[S,S],\\
+&=\prod_{i=1}^n(1+t\lambda_i(M)).
+\end{align*}
+Compare coefficients of $t^k$, $0\leq k\leq n$:
+\[
+e_k(\lambda(M))=\sum_{|S|=k}\det M[S,S].
+\]
+\alert{Bound each principal minor, then sum.}
+\note{Choosing identity columns off $S$ leaves the corresponding principal minor with positive sign. The second expansion follows from the characteristic polynomial, so no invertibility or distinct eigenvalues are required.}
+\end{frame}
+% Manuscript: Theorem 1, proof
+\begin{frame}{Swap the stacks, preserve the Gram matrix}
+Fix $|S|=k$; let $A_S,B_S$ be the selected columns.
+\[
+U=\begin{pmatrix}A_S\\B_S\end{pmatrix},\quad
+V=\begin{pmatrix}B_S\\A_S\end{pmatrix}
+\quad (2p\times k).
+\]
+\begin{align*}
+U^*U=V^*V&=R[S,S],\\
+U^*V&=H[S,S].
+\end{align*}
+A Gram matrix records pairwise column inner products.
+\note{First take real $a,b$ and explain equal-length vectors $u=(a,b)$ and $v=(b,a)$, then multiply the blocks. We never assume $A,B$ commute. Equal Gram matrices, rather than a common eigenbasis, drive this step.}
+\end{frame}
+% Manuscript: Lemma 2
+\begin{frame}{Where does Cauchy–Schwarz act?}
+\begin{bookresult}{gram-bound}
+$U,V\in\mathbb C^{m\times k}$, $m,k\geq0$:
+\[
+|\det(U^*V)|^2\leq\det(U^*U)\det(V^*V).
+\]
+\end{bookresult}
+Put $u_T=\det U[T,:]$, $v_T=\det V[T,:]$.
+\[
+\det(U^*V)=\sum_{|T|=k}\overline{u_T}v_T.
+\]
+Apply Cauchy–Schwarz to $(u_T)_T,(v_T)_T$.
+\note{Cauchy–Binet identifies the two squared list norms with $\det(U^*U)$ and $\det(V^*V)$. Thus ordinary vector Cauchy–Schwarz acts on lists of minors. If $k>m$, rank is insufficient; if $k=0$, use the empty minor.}
+\end{frame}
+% Manuscript: Theorem 1, proof
+\begin{frame}{From a squared bound to a spectral bound}
+Equal Gram matrices give
+\[
+|\det H[S,S]|^2\leq(\det R[S,S])^2.
+\]
+$R[S,S]$ is positive semidefinite: take nonnegative roots.
+\begin{align*}
+|e_k(\lambda(H))|&\leq\sum_{|S|=k}|\det H[S,S]|\\
+&\leq\sum_{|S|=k}\det R[S,S]\\
+&=e_k(\lambda(R)),\quad 0\leq k\leq n.
+\end{align*}
+\note{Identify the triangle inequality, then the termwise minor bound. Positivity is needed for $R[S,S]$, not for $H$. Every step is finite algebra and includes singular matrices directly.}
+\end{frame}
+\section{Scope}
+% Manuscript: Corollary 3; Section 3, source coverage
+\begin{frame}{Return to the question; separate the scopes}
+\begin{bookresult}{hermitian-bound}
+Arbitrary Hermitian $X,Y\in\mathbb C^{n\times n}$; $n\geq1$, $0\leq k\leq n$:
+\[
+|e_k(\lambda(XY+YX))|\leq e_k(\lambda(X^2+Y^2)).
+\]
+\end{bookresult}
+\begin{bookresult}{mo-positive}
+Positive semidefinite Hermitian inputs, $1\leq k\leq n$:
+\[
+e_k(\lambda(XY+YX))\leq e_k(\lambda(X^2+Y^2)).
+\]
+\end{bookresult}
+\note{Take $A=X,B=Y,p=n$ and use $X^*=X,Y^*=Y$. Only the lower statement is the exact scope of the public Lean result. The upper written corollary is stronger; keep their evidence separate.}
+\end{frame}
+% Manuscript: Corollary 4
+\begin{frame}{Polynomial bound and simultaneous equality}
+\begin{bookresult}{determinant-bound}
+With $A,B,H,R$ as before, for every $z\in\mathbb C$:
+\[
+|\det(I+zH)|\leq\det(I+|z|R).
+\]
+\[
+|\det H|\leq\det R,\quad
+\operatorname{tr}R-\operatorname{tr}H=\|A-B\|_F^2.
+\]
+All one-sided $e_k$ equalities, $1\leq k\leq n$, hold together
+$\Longleftrightarrow A=B$.
+\end{bookresult}
+Necessity uses only $k=1$; absolute equalities differ.
+\note{Bound the polynomial coefficients termwise and use the triangle inequality. The squared Frobenius norm sums squared entry moduli. With $A=-B\ne0$, every absolute-value equality holds even though $A\ne B$.}
+\end{frame}
+% Manuscript: Sections 1 and 3; bibliography
+\begin{frame}{Meaning, sources and next steps}
+\begin{itemize}
+\item One mechanism controls trace, determinant and intermediate sums.
+\item No commutation; no approximation for singular inputs.
+\item The three-matrix Schur result requires pairwise commutation.
+\end{itemize}
+\small
+Malkoun, MO 512579 revision 1 (2026).\\
+J. K. Merikoski, A. Virtanen (1992),
+\href{https://doi.org/10.21136/cmj.1992.128332}{compound matrices and symmetric spectral functions}.\\
+Haobo Ma, Wenlin Zhang,
+\href{https://doi.org/10.5281/zenodo.23920583}{version 1 paper}.\\
+Shared requests: Gram bound; rectangular extension; polynomial and equality; commuting Schur.
+\note{End the main story here. Contribution links are in the reading chapter. Credit cubesteak's posted proof of the different normalized three-matrix determinant problem, MO answer 514685, 26 August 2026. This talk does not settle all three-matrix questions.}
+\end{frame}
+\appendix
+\section{Boundaries}
+% Manuscript: Lemma 2 and proofs of Theorem 1, Corollary 4
+\begin{frame}{Empty minors, rank and zero parameters}
+\begin{itemize}
+\item $k=0$: empty minors and products are $1$.
+\item Gram lemma, $k>m$: all three determinants vanish.
+\item Stacks, $k>2p$: rank makes the relevant minors zero.
+\item $z=0$: the polynomial bound is $1=1$.
+\item Repeated eigenvalues count with multiplicity; no limits.
+\end{itemize}
+\note{These boundaries follow directly from finite determinant identities, rather than an appeal to continuity. Finite examples do not replace this all-parameter argument.}
+\end{frame}
+\section{Three matrices}
+% Manuscript: Corollary 5
+\begin{frame}{Commuting Schur siblings}
+Pairwise commuting PSD Hermitian $A,B,C$, $n\geq1$:
+\[
+S=A+B+C,\quad Q=A^2+B^2+C^2,
+\]
+\[
+F=6(A^3+B^3+C^3)+S^3.
+\]
+\begin{bookresult}{commuting-schur}
+\[
+\det F\geq5^n\det S\det Q.
+\]
+For $0\leq k\leq n$,
+\begin{align*}
+e_k(\sigma(F))&\geq e_k(\sigma(5SQ)),\\
+e_k(\lambda(2F))&\geq e_k(\lambda(5SQ+5QS)).
+\end{align*}
+\end{bookresult}
+\note{$\sigma$ lists singular values with multiplicity. This is source Corollary 5. All three clauses require commutation. It is independent of the rectangular theorem and does not establish the noncommuting versions.}
+\end{frame}
+% Manuscript: Corollary 5, proof
+\begin{frame}{The scalar calculation after diagonalization}
+In a common eigenbasis, sort $a\geq b\geq c\geq0$ at each position.
+\[
+s=a+b+c,\quad q=a^2+b^2+c^2,
+\]
+\[
+f=6(a^3+b^3+c^3)+s^3.
+\]
+\begin{align*}
+f-5sq&=2\bigl((a-b)^2(a+b-c)\\
+&\hspace{2em}+c(a-c)(b-c)\bigr)\geq0.
+\end{align*}
+Multiply entries, then sum; use $SQ=QS$ for the last clause.
+
+\note{Commutation preserves eigenspaces and supplies a common unitary eigenbasis. At each position we can sort the three scalars independently because the expression is symmetric. All factors are nonnegative; no division by a zero entry is needed.}
+\end{frame}
+% Manuscript: Source coverage and verification
+\FormalVerification
+\end{document}

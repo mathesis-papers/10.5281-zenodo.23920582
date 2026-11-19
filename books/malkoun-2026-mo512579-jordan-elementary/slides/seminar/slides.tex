@@ -1,0 +1,239 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{从平方差到矩阵不等式}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}Chrono AI, Singapore \and \inst{2}National University of Singapore, Singapore}
+\date{2026-11-15}
+\begin{document}
+% Manuscript: Title; version 1, DOI 10.5281/zenodo.23920583
+\begin{frame}
+\titlepage
+\note{报告依据版本 1 论文，保持作者姓名与机构。以一个二维例子进入问题，再给长方形主定理、堆叠机制及精确证据范围。}
+\end{frame}
+\section{问题}
+% Manuscript: Section 1, posed inequality
+\begin{frame}{一个标量不等式能走多远？}
+\[
+2xy\leq x^2+y^2,\qquad (x-y)^2\geq0.
+\]
+\begin{itemize}
+\item 用 Hermitian 矩阵代替实数，混合项为 $XY+YX$。
+\item 问题：每次选 $k$ 个特征值相乘，再相加，仍有界吗？
+\item 答案：有，甚至能控制这个总和的绝对值。
+\end{itemize}
+\note{先从学生熟悉的平方差讲起。矩阵乘法通常不交换，因此混合项要写 $XY+YX$，不是把两项直接合成 $2XY$。本文约定没有因子 $1/2$。问题来自 Malkoun 的 MO 512579 revision 1。}
+\end{frame}
+% Manuscript: Section 2, example after Corollary 4
+\begin{frame}{正输入也能产生负行列式}
+\[
+X=\begin{pmatrix}1&0\\0&0\end{pmatrix},\quad
+Y=\begin{pmatrix}1&1\\1&1\end{pmatrix}.
+\]
+\begin{align*}
+H=XY+YX&=\begin{pmatrix}2&1\\1&0\end{pmatrix},\\
+R=X^2+Y^2&=\begin{pmatrix}3&2\\2&2\end{pmatrix}.
+\end{align*}
+\[
+\det H=-1,\qquad \det R=2.
+\]
+\note{用二次式 $|v_1|^2$ 和 $|v_1+v_2|^2$ 解释正半定，星号是共轭转置。$H$ 是实对称矩阵，行列式为负说明两个特征值异号。绝对值界 $1\leq2$ 比 $-1\leq2$ 更有信息。}
+\end{frame}
+% Manuscript: Section 1, notation
+\begin{frame}{从迹到行列式}
+$\lambda(M)$ 列出全部特征值，重复也计入。
+\[
+e_k(t_1,\ldots,t_n)=\sum_{|S|=k}\prod_{i\in S}t_i.
+\]
+\begin{align*}
+e_0&=1, &e_1(\lambda(M))&=\operatorname{tr}M,\\
+e_2(a,b,c)&=ab+ac+bc, &e_n(\lambda(M))&=\det M.
+\end{align*}
+\begin{block}{二维例子}
+$|e_1(\lambda(H))|=2\leq5$，\quad $|e_2(\lambda(H))|=1\leq2$。
+\end{block}
+\note{先举三个数的两两乘积，再引入术语“初等对称函数”。$e_1$ 是对角元之和，$e_n$ 是行列式。$e_0$ 用空乘积约定为 $1$。}
+\end{frame}
+\section{结论}
+% Manuscript: Theorem 1
+\begin{frame}{纸面主结果：任意长方形输入}
+$A,B\in\mathbb C^{p\times n}$，$p,n\geq1$；定义
+\[
+H=A^*B+B^*A,\qquad R=A^*A+B^*B.
+\]
+\begin{bookresult}{rectangular-bound}
+对每个 $S\subseteq\{1,\ldots,n\}$，
+\[
+|\det H[S,S]|\leq\det R[S,S].
+\]
+对 $0\leq k\leq n$，
+\begin{align*}
+|e_k(\lambda(H))|&\leq\sum_{|S|=k}|\det H[S,S]|\\
+&\leq e_k(\lambda(R)).
+\end{align*}
+\end{bookresult}
+\note{$M[S,S]$ 是同一组行列构成的主子矩阵。这是原文 Theorem 1，不要求 $A,B$ 正半定，甚至不要求它们是方阵。两个乘积仍为 $n$ 阶矩阵。空集给出 $1\leq1$。}
+\end{frame}
+\section{机制}
+% Manuscript: Section 2, coefficient identity
+\begin{frame}{谱问题变成小行列式}
+逐列展开 $I+tM$，或按特征值分解同一多项式：
+\begin{align*}
+\det(I+tM)&=\sum_{k=0}^n t^k\sum_{|S|=k}\det M[S,S],\\
+&=\prod_{i=1}^n(1+t\lambda_i(M)).
+\end{align*}
+比较 $t^k$ 的系数，$0\leq k\leq n$：
+\[
+e_k(\lambda(M))=\sum_{|S|=k}\det M[S,S].
+\]
+\alert{先逐项控制主子式，再相加。}
+\note{解释选择单位矩阵的列会留下对应的主子式，符号为正。第二个展开来自特征多项式，因此不需要矩阵可逆，也不需要特征值互异。}
+\end{frame}
+% Manuscript: Theorem 1, proof
+\begin{frame}{交换堆叠，保持 Gram 矩阵}
+固定 $|S|=k$，令 $A_S,B_S$ 为选中的列。
+\[
+U=\begin{pmatrix}A_S\\B_S\end{pmatrix},\quad
+V=\begin{pmatrix}B_S\\A_S\end{pmatrix}
+\quad (2p\times k).
+\]
+\begin{align*}
+U^*U=V^*V&=R[S,S],\\
+U^*V&=H[S,S].
+\end{align*}
+Gram 矩阵收集各列两两的内积。
+\note{先以 $u=(a,b)$、$v=(b,a)$ 的等长向量解释交换，然后逐块相乘。这里没有使用 $A,B$ 可交换。等 Gram 矩阵是关键，而非共同特征向量。}
+\end{frame}
+% Manuscript: Lemma 2
+\begin{frame}{Cauchy–Schwarz 作用在哪里？}
+\begin{bookresult}{gram-bound}
+$U,V\in\mathbb C^{m\times k}$，$m,k\geq0$：
+\[
+|\det(U^*V)|^2\leq\det(U^*U)\det(V^*V).
+\]
+\end{bookresult}
+令 $u_T=\det U[T,:]$，$v_T=\det V[T,:]$。
+\[
+\det(U^*V)=\sum_{|T|=k}\overline{u_T}v_T.
+\]
+对两列数 $(u_T)_T,(v_T)_T$ 用 Cauchy–Schwarz。
+\note{Cauchy–Binet 还给出两个平方范数分别是 $\det(U^*U)$ 与 $\det(V^*V)$。这是普通向量不等式在子式列表上的应用。$k>m$ 时秩不足，$k=0$ 时是空子式。}
+\end{frame}
+% Manuscript: Theorem 1, proof
+\begin{frame}{从平方界到谱界}
+相同的 Gram 矩阵给出
+\[
+|\det H[S,S]|^2\leq(\det R[S,S])^2.
+\]
+$R[S,S]$ 正半定，故行列式非负，可开平方。
+\begin{align*}
+|e_k(\lambda(H))|&\leq\sum_{|S|=k}|\det H[S,S]|\\
+&\leq\sum_{|S|=k}\det R[S,S]\\
+&=e_k(\lambda(R)),\quad 0\leq k\leq n.
+\end{align*}
+\note{逐步指出三角不等式和主子式界各用一次。正半定的是 $R[S,S]$，无需假定 $H$ 正半定。全部步骤有限，奇异矩阵直接包括。}
+\end{frame}
+\section{范围}
+% Manuscript: Corollary 3; Section 3, source coverage
+\begin{frame}{回到原问题，并区分证据范围}
+\begin{bookresult}{hermitian-bound}
+任意 Hermitian $X,Y\in\mathbb C^{n\times n}$；$n\geq1$，$0\leq k\leq n$：
+\[
+|e_k(\lambda(XY+YX))|\leq e_k(\lambda(X^2+Y^2)).
+\]
+\end{bookresult}
+\begin{bookresult}{mo-positive}
+正半定 Hermitian 输入，$1\leq k\leq n$：
+\[
+e_k(\lambda(XY+YX))\leq e_k(\lambda(X^2+Y^2)).
+\]
+\end{bookresult}
+\note{取 $A=X,B=Y,p=n$，利用 $X^*=X,Y^*=Y$。下方才是公开 Lean result 的完整范围。上方纸面推论更强，不把两个声明的证据合并。}
+\end{frame}
+% Manuscript: Corollary 4
+\begin{frame}{多项式界与同时等号}
+\begin{bookresult}{determinant-bound}
+沿用 $A,B,H,R$，对每个 $z\in\mathbb C$：
+\[
+|\det(I+zH)|\leq\det(I+|z|R).
+\]
+\[
+|\det H|\leq\det R,\quad
+\operatorname{tr}R-\operatorname{tr}H=\|A-B\|_F^2.
+\]
+所有单向 $e_k$ 等号（$1\leq k\leq n$）同时成立
+$\Longleftrightarrow A=B$。
+\end{bookresult}
+必要性只需 $k=1$；绝对值等号不是这个分类。
+\note{对多项式系数逐项取界，再用三角不等式。Frobenius 范数平方是所有元素模平方之和。$A=-B\ne0$ 说明所有绝对值等号也可能成立，而 $A\ne B$。}
+\end{frame}
+% Manuscript: Sections 1 and 3; bibliography
+\begin{frame}{意义、来源与下一步}
+\begin{itemize}
+\item 迹、行列式与中间各阶总和得到统一控制。
+\item 无需可交换性；奇异输入无需逼近。
+\item 三矩阵 Schur 结果仅限两两可交换情形。
+\end{itemize}
+\small
+Malkoun，MO 512579 revision 1（2026）。\\
+J. K. Merikoski、A. Virtanen（1992），
+\href{https://doi.org/10.21136/cmj.1992.128332}{复合矩阵与初等对称谱函数}。\\
+Haobo Ma、Wenlin Zhang，
+\href{https://doi.org/10.5281/zenodo.23920583}{版本 1 论文}。\\
+共享请求：Gram 界、长方形推广、多项式与等号、可交换 Schur。
+\note{数学主线在此结束。贡献链接在读者章节中给出。先前的 normalized 三矩阵行列式证明归于 cubesteak，MO answer 514685，2026 年 8 月 26 日；它是不同表达式，不能声称本报告解决了所有三矩阵问题。}
+\end{frame}
+\appendix
+\section{边界}
+% Manuscript: Lemma 2 and proofs of Theorem 1, Corollary 4
+\begin{frame}{空子式、秩与零参数}
+\begin{itemize}
+\item $k=0$：空子式、空乘积均为 $1$。
+\item Gram 引理 $k>m$：三个行列式都为 $0$。
+\item 堆叠中 $k>2p$：秩不足，相关子式全为 $0$。
+\item $z=0$：多项式界为 $1=1$。
+\item 重特征值按重数计算；全程无取极限。
+\end{itemize}
+\note{这些不是通过连续性补上的边界，而是有限行列式恒等式的直接情形。有限样例不能替代这个全参数论证。}
+\end{frame}
+\section{三矩阵}
+% Manuscript: Corollary 5
+\begin{frame}{可交换 Schur 推论}
+两两可交换的正半定 Hermitian $A,B,C$，$n\geq1$：
+\[
+S=A+B+C,\quad Q=A^2+B^2+C^2,
+\]
+\[
+F=6(A^3+B^3+C^3)+S^3.
+\]
+\begin{bookresult}{commuting-schur}
+\[
+\det F\geq5^n\det S\det Q.
+\]
+对 $0\leq k\leq n$，
+\begin{align*}
+e_k(\sigma(F))&\geq e_k(\sigma(5SQ)),\\
+e_k(\lambda(2F))&\geq e_k(\lambda(5SQ+5QS)).
+\end{align*}
+\end{bookresult}
+\note{$\sigma$ 表示按重数列出的奇异值。这是原文 Corollary 5，全部三条结论均要求可交换性。它不依赖长方形主定理，且不证明非交换版本。}
+\end{frame}
+% Manuscript: Corollary 5, proof
+\begin{frame}{同时对角化后的一行代数}
+共同对角基中，每个位置取 $a\geq b\geq c\geq0$。
+\[
+s=a+b+c,\quad q=a^2+b^2+c^2,
+\]
+\[
+f=6(a^3+b^3+c^3)+s^3.
+\]
+\begin{align*}
+f-5sq&=2\bigl((a-b)^2(a+b-c)\\
+&\hspace{2em}+c(a-c)(b-c)\bigr)\geq0.
+\end{align*}
+逐项乘积再相加；$SQ=QS$ 处理最后一条。
+
+\note{可交换性使特征空间相互保留，从而得到共同的酉对角基。每个位置允许独立重排三个标量，因为表达式对称。所有因子非负；零对角元不需要除法。}
+\end{frame}
+% Manuscript: Source coverage and verification
+\FormalVerification
+\end{document}

@@ -1,0 +1,25 @@
+{
+  "schema": "trureturing-books.lock.v1",
+  "repo": "the-omega-institute/trureturing",
+  "branch": "dev",
+  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+  "pinned_at": "2026-11-08T12:32:04Z",
+  "declarations": {
+    "D5/S3/Quantum/Matrix/MalkounJordanElementary.result": {
+      "module": "D5/S3/Quantum/Matrix/MalkounJordanElementary",
+      "name": "D5.S3.Quantum.Matrix.MalkounJordanElementary.result",
+      "kind": "theorem",
+      "statement_id": "sha256:25f58b7e67a32462465919b31d3f1a3e32fdb82e46e6120a45c7e386faeb9c9d",
+      "line": 156,
+      "signature": "theorem result : claim"
+    },
+    "D5/S3/Quantum/Schatten/CompoundMatrices.cauchyBinet": {
+      "module": "D5/S3/Quantum/Schatten/CompoundMatrices",
+      "name": "cauchyBinet",
+      "kind": "theorem",
+      "statement_id": "sha256:8398f8b23ac0815231125a1304c91754b658ebb26e9e24af0ace9c2147f696ce",
+      "line": 149,
+      "signature": "lemma cauchyBinet {m : ℕ} {n : Type*} [Fintype n] [DecidableEq n] [LinearOrder n] {R : Type*} [CommRing R] (A : Matrix (Fin m) n R) (B : Matrix n (Fin m) R) : (A * B).det = ∑ S : {S : Finset n // S.card = m}, (A.submatrix id (S.1.orderEmbOfFin S.2)).det * (B.submatrix (S.1.orderEmbOfFin S.2) id).det"
+    }
+  }
+}

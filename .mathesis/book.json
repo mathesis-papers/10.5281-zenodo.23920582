@@ -1,0 +1,77 @@
+{
+  "book": "malkoun-2026-mo512579-jordan-elementary",
+  "pending_claims": [],
+  "results": {
+    "mo-positive": {
+      "claim": "collected:malkoun-2026-mo512579-jordan-elementary:1:s3",
+      "gids": [
+        "D5/S3/Quantum/Matrix/MalkounJordanElementary.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Quantum/Matrix/MalkounJordanElementary.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "gram-bound": {
+      "claim": "collected:malkoun-2026-mo512579-jordan-elementary:1:s2",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Quantum/Schatten/CompoundMatrices.cauchyBinet",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Lemma 2 — Gram determinant bound",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/179"
+      }
+    },
+    "rectangular-bound": {
+      "claim": "collected:malkoun-2026-mo512579-jordan-elementary:1:s1",
+      "gids": [],
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Quantum/Matrix/MalkounJordanElementary.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Theorem 1 — Rectangular Jordan bounds",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/180"
+      }
+    },
+    "hermitian-bound": {
+      "claim": "collected:malkoun-2026-mo512579-jordan-elementary:1:s3",
+      "gids": [],
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Quantum/Matrix/MalkounJordanElementary.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 3 — Arbitrary Hermitian inputs",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/180"
+      }
+    },
+    "determinant-bound": {
+      "claim": "collected:malkoun-2026-mo512579-jordan-elementary:1:s4",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 4 — Polynomial bound and simultaneous equality",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/181"
+      }
+    },
+    "commuting-schur": {
+      "claim": "collected:malkoun-2026-mo512579-jordan-elementary:1:s5",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 5 — Commuting Schur siblings",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/182"
+      }
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product",
+    "zh": "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product"
+  },
+  "version": 1,
+  "work": "malkoun-2026-mo512579-jordan-elementary"
+}

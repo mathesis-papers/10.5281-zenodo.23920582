@@ -1,0 +1,206 @@
+{
+  "voice": "af_heart",
+  "speed": 0.98,
+  "say": {
+    "Malkoun": "Mal koon",
+    "Cauchy": "Ko shee",
+    "Binet": "Bee nay",
+    "Hermitian": "Her mee shun",
+    "Lean": "Leen"
+  },
+  "music": {
+    "bpm": 84,
+    "progression": "d-minor"
+  },
+  "scenes": [
+    {
+      "id": "scalar",
+      "name": "A FAMILIAR SQUARE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "For real numbers, twice x times y is at most x squared plus y squared. The difference is a square.",
+          "对实数，二倍的 x 乘 y 不超过 x 平方加 y 平方，因为差是一个平方。"
+        ],
+        [
+          "Can we replace the numbers by matrices and still compare products of their eigenvalues?",
+          "把数换成矩阵后，还能比较特征值的乘积吗？"
+        ],
+        [
+          "Malkoun asked this question. Haobo Ma and Wenlin Zhang give a bound that even includes absolute values.",
+          "Malkoun 提出了这个问题。Haobo Ma 与 Wenlin Zhang 给出了连绝对值也能控制的界。"
+        ]
+      ]
+    },
+    {
+      "id": "example",
+      "name": "POSITIVE INPUTS, NEGATIVE OUTPUT",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Start with these two real symmetric matrices. Their quadratic expressions are a squared coordinate and a squared sum, so both are positive semidefinite.",
+          "从这两个实对称矩阵开始。它们的二次式分别是坐标平方与和的平方，因此都正半定。"
+        ],
+        [
+          "The mixed matrix H has determinant minus one. Its eigenvalues have opposite signs, even though both input matrices are positive semidefinite.",
+          "混合矩阵 H 的行列式为负一。尽管两个输入都正半定，H 的特征值却异号。"
+        ],
+        [
+          "The comparison matrix R has determinant two. The paper bounds the absolute value: one is at most two.",
+          "比较矩阵 R 的行列式是二。论文控制绝对值：一不超过二。"
+        ]
+      ]
+    },
+    {
+      "id": "minors",
+      "name": "SUM SMALL DETERMINANTS",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "An elementary symmetric function chooses k eigenvalues, multiplies them, and adds over all choices.",
+          "初等对称函数每次选择 k 个特征值相乘，再对所有选择相加。"
+        ],
+        [
+          "The first is the trace; the last is the determinant. Between them lies a whole family of quantities.",
+          "第一个是迹，最后一个是行列式，中间还有一整套量。"
+        ],
+        [
+          "There is another way to compute each one: add the principal minors of size k. Choose the same rows and columns, then take a determinant.",
+          "每一项还可通过所有 k 阶主子式相加得到：选择相同下标的行和列，再取行列式。"
+        ]
+      ]
+    },
+    {
+      "id": "stack",
+      "name": "THE SWAP THAT MATTERS",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Now let A and B be any complex rectangular matrices of the same size. Select a set of columns from each.",
+          "现在让 A 和 B 是任意同尺寸的复长方形矩阵，分别选择同一组列。"
+        ],
+        [
+          "Stack A above B to make U. Swap the blocks to make V. The two Gram matrices agree: swapping preserves every column inner product.",
+          "把 A 放在 B 上方堆成 U，再交换两块得到 V。交换保留各列内积，所以两个 Gram 矩阵相同。"
+        ],
+        [
+          "Their common Gram matrix is the selected part of R. The cross product gives the selected part of H.",
+          "共同的 Gram 矩阵就是 R 的相应主子矩阵，交叉相乘则得到 H 的相应主子矩阵。"
+        ]
+      ]
+    },
+    {
+      "id": "gram",
+      "name": "CAUCHY–SCHWARZ ON MINOR LISTS",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Cauchy–Binet expands the cross determinant into an inner product of two lists of row minors.",
+          "Cauchy–Binet 把交叉行列式展开为两个行子式列表的内积。"
+        ],
+        [
+          "Ordinary Cauchy–Schwarz bounds this inner product by the lengths of those lists. Those squared lengths are the two Gram determinants.",
+          "普通 Cauchy–Schwarz 用两个列表的长度控制内积，长度平方就是两个 Gram 行列式。"
+        ],
+        [
+          "Here the Gram matrices agree. Their determinant is nonnegative, so taking square roots bounds each absolute principal minor of H by its counterpart in R.",
+          "这里 Gram 矩阵相同，行列式非负；取平方根后，H 的每个主子式绝对值都被 R 的对应主子式控制。"
+        ]
+      ]
+    },
+    {
+      "id": "sum",
+      "name": "FROM MINORS BACK TO EIGENVALUES",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "The absolute value of a sum is at most the sum of absolute values. Bound each minor, then add.",
+          "总和的绝对值不超过绝对值之和。逐项控制主子式，然后相加。"
+        ],
+        [
+          "This proves the symmetric function bound for every k from zero to n, including singular matrices. No inverse or limit is needed.",
+          "这就证明了从零到 n 的每一阶对称函数界，包括奇异矩阵，无需逆矩阵或取极限。"
+        ],
+        [
+          "Set A equal to X and B equal to Y. For Hermitian inputs, the stars disappear and we recover the stronger answer to the opening question.",
+          "令 A 等于 X、B 等于 Y。Hermitian 条件消去星号，便得到开头问题的更强答案。"
+        ]
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "ONE PRECISE FORMAL STATEMENT",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.3,
+        0.12,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "The public Lean theorem proves the original one-sided inequality for positive semidefinite Hermitian inputs, in positive dimension and for k from one to n.",
+          "公开 Lean 定理证明原来的单向不等式：正半定 Hermitian 输入，维数为正，k 从一到 n。"
+        ],
+        [
+          "The absolute-value and rectangular extensions have the written proofs explained here. Their formalization is a separate next step.",
+          "绝对值与长方形推广有这里解释的书面证明，其形式化是另一个待推进的步骤。"
+        ],
+        [
+          "The key idea to remember is simple: swap the stacks, preserve the Gram matrix, then sum the minor bounds.",
+          "记住这个关键动作：交换堆叠，保持 Gram 矩阵，再把主子式的界相加。"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[book]
+version = "1"
+authors = ["Haobo Ma", "Wenlin Zhang"]
+license = "CC-BY-4.0"
+editions = ["zh", "en"]
+date = "2026-11-05"
+[book.title]
+zh = "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product"
+en = "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product"
+[outputs]
+html = true
+pdf = ["academic"]
+epub = true
+[mathesis]
+work = "malkoun-2026-mo512579-jordan-elementary"
+version = 1
+source_title = "MathOverflow 512579, revision 1: The elementary symmetric inequality for a Hermitian Jordan product"

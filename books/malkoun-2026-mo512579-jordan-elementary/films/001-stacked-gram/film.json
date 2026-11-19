@@ -1,0 +1,29 @@
+{
+  "duration": "3:02",
+  "id": "001-stacked-gram",
+  "lean": [
+    "D5/S3/Quantum/Matrix/MalkounJordanElementary.result"
+  ],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "malkoun-2026-mo512579-jordan-elementary_001_cover.jpg",
+    "narrated_720p": "malkoun-2026-mo512579-jordan-elementary_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-15",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "subject": "https://doi.org/10.5281/zenodo.23920583",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "A negative determinant leads to the swapped-stack Gram proof of the Jordan symmetric-function inequality.",
+  "summary_zh": "从负行列式例子进入交换堆叠的 Gram 证明，解释 Jordan 乘积的初等对称函数界。",
+  "title": "Swap the stacks, bound the determinant",
+  "title_zh": "交换堆叠，控制行列式"
+}
